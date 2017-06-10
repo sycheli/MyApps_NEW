@@ -31,7 +31,5 @@ namespace MyApps.ViewsModel
             }
         }
 
-       
-       
     }
 }
