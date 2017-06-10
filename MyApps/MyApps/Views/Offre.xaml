@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" 
+             xmlns:local="clr-namespace:MyApps.ViewsModel;assembly=MyApps"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:v="clr-namespace:MyApps;assembly=MyApps"
+             x:Class="MyApps.Views.Offre"
+             Title = "Offre"
+             SizeChanged="AbsolutePageXaml_SizeChanged"
+             >
+ 
+    <ContentPage.Content >
+      <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="bg.png" Aspect="AspectFill"/>
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+          <StackLayout  Orientation="Vertical" >
+            <ListView x:Name="RestaurantListView"  HasUnevenRows="True" >
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <StackLayout Spacing="0" Padding="7,7,7,0" >
+                      <StackLayout  Orientation="Horizontal" BackgroundColor="White" >
+                        <Image Source="{Binding img}"  HeightRequest="80" WidthRequest="80"/> 
+                          <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+                           <Label Text="{Binding name}" FontSize="14" TextColor="Green"  FontFamily="Times New Roman"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                <Label Text="{Binding discount}" FontSize="14" FontFamily="Times New Roman" TextColor="Red" XAlign="End" /> 
+                                <Label Text="%" FontSize="14" FontFamily="Times New Roman" TextColor="Red" XAlign="End" />
+                            </StackLayout>  
+                            </StackLayout>
+                      </StackLayout>
+                    </StackLayout>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+
+         <StackLayout Orientation="Horizontal" Opacity="0.7" HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="0" Padding="10,0,10,0">
+           <Grid >         
+                <Image Grid.Row="0" Grid.Column="0" HeightRequest="40" WidthRequest="40" Source="all.png" >
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="tapImage" NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+               
+                <Image Grid.Row="0" Grid.Column="3" HeightRequest="40" WidthRequest="40" Source="pizaa_col.png" >
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="tapImage1" NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+               
+                <Image  Grid.Row="0" Grid.Column="6" HeightRequest="40" WidthRequest="40" Source="sandwish.png"  >
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="tapImage2" NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+               <!--<BoxView Grid.Column="7" Grid.Row="0"   BackgroundColor="Black" WidthRequest="1" VerticalOptions="Start" HorizontalOptions="End"/>-->
+                <Image  Grid.Row="0" Grid.Column="9" HeightRequest="40" WidthRequest="40" Source="machawi.png" >
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="tapImage3" NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+              </Grid>
+            </StackLayout>
+            
+          </StackLayout>
+               
+            </ScrollView>
+          
+      <ContentView x:Name="bgLayer"
+                     BackgroundColor="Black"
+                     Opacity="0.5"
+                     IsVisible="False" />
+          <Frame x:Name="frameLayer"
+               BackgroundColor="White"
+               IsVisible="False">
+            <StackLayout>
+                <ActivityIndicator IsRunning="True">
+                    <ActivityIndicator.Color>
+                        <OnPlatform x:TypeArguments="Color"
+                                    iOS="Default"
+                                    Android="Default"
+                                    WinPhone="Accent" />
+                    </ActivityIndicator.Color>
+                </ActivityIndicator>
+                <Label Text="Data loading..."
+                       TextColor="Black"
+                       XAlign="Center" />
+            </StackLayout>
+        </Frame>
+           
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+
+   
+
+</ContentPage>

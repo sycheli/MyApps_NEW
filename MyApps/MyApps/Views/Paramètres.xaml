@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApps.Views.Paramètres"
+             xmlns:views="clr-namespace:MyApps.Views;assembly=MyApps.Views"
+             Title="Paramètres">
+
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="bg.png" Aspect="AspectFill"/>
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <SwitchCell Text="On" On="true" />
+                        <SwitchCell Text="Off" On="false" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+
+
+
+</ContentPage>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MyApps.ViewsModel;assembly=MyApps"
+             x:Class="MyApps.SignUpPage">
+
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+      <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="signin.png" Aspect="AspectFill"/>
+      <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        <Grid Padding="20, 30, 20, 20" RowSpacing="20">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid Grid.Row="4" HorizontalOptions="Fill" Padding="5">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="username.png" HeightRequest="30" VerticalOptions="Center" Grid.Row="0" Grid.Column="0"/>
+            <Entry Text="{Binding Email}" Placeholder="Email" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1"/>
+          </Grid>
+          <!--<BoxView HeightRequest="1" Grid.Row="4" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>-->
+          
+          <Grid Grid.Row="5" HorizontalOptions="Fill" Padding="5">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="iconEmail.png" HeightRequest="30" VerticalOptions="Center" Grid.Row="0" Grid.Column="0"/>
+            <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
+          </Grid>
+          <!--<BoxView HeightRequest="1" Grid.Row="5" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>-->
+          
+          <Grid Grid.Row="6" HorizontalOptions="Fill" Padding="5">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="iconPassword.png" HeightRequest="30" VerticalOptions="Center" />
+            <Entry Text="{Binding ConfirmPassword}" IsPassword="True" Placeholder="ConfirmPassword" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
+          </Grid>
+          <!--<BoxView HeightRequest="1" Grid.Row="5" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>-->
+          
+          <StackLayout Grid.Row="7" Spacing="12" HorizontalOptions="Fill" Padding="0,25,0,0">
+          <Button Text="SignUp" Command="{Binding RegisterCommand}" BackgroundColor="#1FBED6" HorizontalOptions="Fill" TextColor="White" HeightRequest="40" />
+
+          </StackLayout>
+        </Grid>
+      </ScrollView>
+    </AbsoluteLayout>
+  </ContentPage.Content>
+</ContentPage>
