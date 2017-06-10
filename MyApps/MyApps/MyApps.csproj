@@ -71,14 +71,12 @@
     <Compile Include="ViewPage.xaml.cs">
       <DependentUpon>ViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewsModel\Constants.cs" />
-    <Compile Include="ViewsModel\LoginPageCS.cs" />
-    <Compile Include="ViewsModel\LogOutCS.cs" />
     <Compile Include="ViewsModel\Restaurant.cs" />
-    <Compile Include="ViewsModel\SignUpPageCS.cs" />
-    <Compile Include="ViewsModel\User.cs" />
     <Compile Include="Views\MapPage.xaml.cs">
       <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapPages.xaml.cs">
+      <DependentUpon>MapPages.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Offre.xaml.cs">
       <DependentUpon>Offre.xaml</DependentUpon>
@@ -244,6 +242,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="RestaurantDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MapPages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

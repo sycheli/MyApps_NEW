@@ -20,10 +20,10 @@ namespace MyApps
             this.restaurant = restaurant;
             InitializeComponent();
            NavigationPage.SetHasNavigationBar(this, false);
-            //tapAdress.Tapped += async (object sender, EventArgs e) =>
-            //{
-            //    await Navigation.PushAsync(new MapPage());
-            //};
+            tapImage.Tapped += async (object sender, EventArgs e) =>
+            {
+                await Navigation.PushAsync(new MapPages(restaurant));
+            };
         }
 
         public static List<Restaurant> Restaurants;

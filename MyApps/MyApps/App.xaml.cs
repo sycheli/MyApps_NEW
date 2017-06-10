@@ -12,7 +12,7 @@ namespace MyApps
         public static bool IsUserLoggedIn { get; set; }
         public App()
         {
-            MainPage = new NavigationPage(new ViewPage());
+            MainPage = new NavigationPage(new SideDrawer());
 
 
 

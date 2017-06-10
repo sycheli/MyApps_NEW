@@ -14,14 +14,16 @@ using Xamarin.Forms.Maps;
 
 namespace MyApps.Views
 {
-    public partial class MapPage : ContentPage
+    public partial class MapPages : ContentPage
     {
         public static List<Restaurant> restaurants { get; set; }
         Position MyPosition = new Position(36.244998, 6.570788);
-        public MapPage()
+        Restaurant r;
+        public MapPages(Restaurant restaurant)
         {
+            this.r = restaurant;
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);           
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         protected override async void OnAppearing()
@@ -32,8 +34,7 @@ namespace MyApps.Views
             locator.DesiredAccuracy = 50;
             var pos = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
             MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(MyPosition, Distance.FromKilometers(1)));
-            foreach (Restaurant r in restaurants)
-            {
+            
                 var pin = new Pin
                 {
                     Position = new Position(r.address.latitude, r.address.longitude),
@@ -42,7 +43,7 @@ namespace MyApps.Views
                 pin.Clicked += PinOnClicked;
                 MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(r.address.latitude, r.address.longitude), Distance.FromKilometers(1)));
                 MainMap.Pins.Add(pin);
-            }
+            
         }
         private void PinOnClicked(object sender, EventArgs e)
         {

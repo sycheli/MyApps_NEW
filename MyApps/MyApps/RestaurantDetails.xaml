@@ -13,7 +13,11 @@
                 <BoxView HeightRequest="1" WidthRequest="150" HorizontalOptions="Center" BackgroundColor="Gray" />
                 <Label Text="Address" FontFamily="Times New Roman" FontSize="14" TextColor="Teal" XAlign="Center" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Image Source="marker1.png"/>
+                  <Image Source="marker1.png">
+                    <Image.GestureRecognizers>
+                      <TapGestureRecognizer x:Name="tapImage" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                  </Image>
                     <Label x:Name="street" Text="{Binding address.street}" FontSize="10" TextColor="Black" FontFamily="Times New Roman"/>
                     <Label x:Name="city" Text="{Binding address.city}" FontSize="10" TextColor="Black" FontFamily="Times New Roman"/>
                     <Label x:Name="country" Text="{Binding address.country}" FontSize="10" TextColor="Black" FontFamily="Times New Roman"/>
