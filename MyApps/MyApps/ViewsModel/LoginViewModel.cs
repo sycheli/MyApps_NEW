@@ -25,7 +25,11 @@ namespace MyApps.ViewsModel
                 {
                     ApiServices apiServices = new ApiServices();
                     await apiServices.LoginAsync(Username, Password);
-
+                    Application.Current.MainPage = new NavigationPage(new SideDrawer())
+                    {
+                        BarBackgroundColor = Color.FromHex("#00B0CD"),
+                        BarTextColor = Color.White,
+                    };
                 });
             }
         }

@@ -39,6 +39,9 @@ namespace MyAppAPI.Models
         public Address address { get; set; }
 
         //Timing
+        [ForeignKey("timing")]
+        [Column ("Timing_id")]
+        public int? Timing_Id { get; set; }
         public virtual Timing timing { get; set; }
 
         

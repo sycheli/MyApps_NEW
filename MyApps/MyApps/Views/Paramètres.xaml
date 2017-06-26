@@ -8,14 +8,57 @@
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="bg.png" Aspect="AspectFill"/>
-            <TableView>
-                <TableRoot>
-                    <TableSection>
-                        <SwitchCell Text="On" On="true" />
-                        <SwitchCell Text="Off" On="false" />
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+          <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <StackLayout  Orientation="Vertical" >
+              <StackLayout Orientation="Horizontal" Padding="7,7,7,7">
+              <Frame HorizontalOptions="FillAndExpand" Padding="7,7,7,7" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White" >                  
+                    <Label  Text="Profil" FontFamily="Times New Roman"   />                
+                </StackLayout>
+              </Frame>
+              </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="7,7,7,7">
+              <Frame HorizontalOptions="FillAndExpand" Padding="7,7,7,7" >
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="White" >
+                    <Label  Text="Changer le mot de passe"  FontFamily="Times New Roman"  />
+                    <BoxView HeightRequest="1" HorizontalOptions="Fill" BackgroundColor="Black" VerticalOptions="End"/>
+                    <Label  Text="Informations de paiement"  FontFamily="Times New Roman"  />                 
+                    </StackLayout>
+                 </Frame>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="7,7,7,7">
+              <Frame HorizontalOptions="FillAndExpand" Padding="7,7,7,7" >
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="White" >
+                    <Label Text="Nous Contacter"  FontFamily="Times New Roman" FontSize="12">
+                      <Label.GestureRecognizers>
+                          <TapGestureRecognizer x:Name="facebook" NumberOfTapsRequired="1" />
+                      </Label.GestureRecognizers>
+                    </Label>                     
+                   
+                    <BoxView HeightRequest="1" HorizontalOptions="Fill" BackgroundColor="Black" VerticalOptions="End"/>
+                    <Label  Text="Version"  FontFamily="Times New Roman" FontSize="12" >
+                      <Label.GestureRecognizers>
+                          <TapGestureRecognizer x:Name="version" NumberOfTapsRequired="1" />
+                      </Label.GestureRecognizers>
+                    </Label>    
+                    <BoxView HeightRequest="1" HorizontalOptions="Fill" BackgroundColor="Black" VerticalOptions="End"/>
+                    <Label  Text="About"  FontFamily="Times New Roman" FontSize="12" /> 
+                    </StackLayout>
+                 </Frame>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="7,7,7,7">
+              <Frame HorizontalOptions="FillAndExpand" Padding="7,7,7,7" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White" >
+                  <Label  Text="Déconnexion"  FontFamily="Times New Roman" FontSize="12" >
+                    <Label.GestureRecognizers>
+                      <TapGestureRecognizer x:Name="dec" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                  </Label>                
+                </StackLayout>
+              </Frame>
+              </StackLayout>
+            </StackLayout>
+          </ScrollView>
         </AbsoluteLayout>
     </ContentPage.Content>
 

@@ -37,11 +37,7 @@ namespace MyApps
                 BarTextColor=Color.White,
             };
 
-            //Logout.Tapped += (object sender, EventArgs e) =>
-            //{
-            //    App.IsUserLoggedIn = false;
-            //    Application.Current.MainPage = new NavigationPage(new LoginPage());
-            //};
+           
         }
 
          
@@ -51,7 +47,7 @@ namespace MyApps
             var item = (MasterPageItem)e.SelectedItem;           
             Type page = item.TargetType;
             Navigation.PushAsync((Page)Activator.CreateInstance(page));
-             IsPresented = false;
+             //IsPresented = false;
            
         }
     }

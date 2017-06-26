@@ -1,11 +1,9 @@
-﻿
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
 namespace MyApps.Views
 {
     public partial class Restaurants : ContentPage
@@ -13,6 +11,7 @@ namespace MyApps.Views
         int n = 0;
         public Restaurants()
         {
+            
             InitializeComponent();
             RestaurantListView.ItemSelected += async (sender, e) =>
             {
@@ -23,17 +22,12 @@ namespace MyApps.Views
                     frameLayer.IsVisible = true;
                     await Task.Delay(2000);
                     n++;
-                    await Navigation.PushAsync(new NavigationPage(new RestaurantDetails(rest)));
-                    
+                    await Navigation.PushAsync(new RestaurantDetails(rest));                   
                     frameLayer.IsVisible = false;
                     bgLayer.IsVisible = false;
-
-
                 }
                 RestaurantListView.SelectedItem = null;
             };
-
-
         }
         protected override async void OnAppearing()
         {
@@ -42,16 +36,13 @@ namespace MyApps.Views
         public List<Restaurant> getListFromJson(string json)
         {
             var Restaurants = JsonConvert.DeserializeObject<List<Restaurant>>(json);
-
-
             return Restaurants;
         }
-
         public static List<Restaurant> Restaurant;
         public async Task GetRestaurant()
         {
             var client = new HttpClient();
-            var json = await client.GetStringAsync("http://192.168.43.65:61500/api/restaurants");
+            var json = await client.GetStringAsync("http://localhost:61500/api/restaurants");
             Restaurant = getListFromJson(json);
             RestaurantListView.ItemsSource = Restaurant;
         }

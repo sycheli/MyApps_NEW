@@ -25,7 +25,7 @@ namespace MyApps.Services
             var json = JsonConvert.SerializeObject(model);
             HttpContent content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var response = await client.PostAsync("http://10.0.3.2:61500/api/Account/Register", content);
+            var response = await client.PostAsync("http://192.168.1.118:61500/api/Account/Register", content);
             
         }
 
@@ -38,7 +38,7 @@ namespace MyApps.Services
                 new KeyValuePair<string, string>("passowrd",password),
                 new KeyValuePair<string, string>("grant_type","password")
             };
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://10.0.3.2:61500/Token");
+            var request = new HttpRequestMessage(HttpMethod.Post, "http://192.168.1.118:61500/Token");
             request.Content = new FormUrlEncodedContent(KeyValues);
             var response = await client.SendAsync(request);
             var content = await response.Content.ReadAsStringAsync();

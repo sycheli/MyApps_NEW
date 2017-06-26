@@ -32,7 +32,7 @@
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
           <Image Source="username.png" HeightRequest="30" VerticalOptions="Center" Grid.Row="0" Grid.Column="0"/>
-          <Entry x:Name="userName" Text="{Binding Username}" Placeholder="Username" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1"/>
+          <Entry x:Name="usernameEntry" Placeholder="Username" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1"/>
           </Grid>
          
           
@@ -46,12 +46,12 @@
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Source="iconPassword.png" HeightRequest="30" VerticalOptions="Center" Grid.Row="0" Grid.Column="0"/>
-           <Entry x:Name="password" Text="{Binding Password}" Placeholder="Password" IsPassword="true" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
+           <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="true" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
           </Grid>
          
           
           <StackLayout Grid.Row="6" Spacing="12" HorizontalOptions="Fill" Padding="0,25,0,0">
-          <Button Text="Login" Command="{Binding LoginCommand}" BackgroundColor="#1FBED6" HorizontalOptions="Fill" TextColor="White" HeightRequest="40" />
+          <Button Text="Login" Clicked="OnLoginButtonClicked" BackgroundColor="#1FBED6" HorizontalOptions="Fill" TextColor="White" HeightRequest="40" />
             
             
         </StackLayout>

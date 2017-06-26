@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:MyApps.ViewsModel;assembly=MyApps"
              x:Class="MyApps.Views.Restaurants"
              Title = "Restaurants"
-             SizeChanged="AbsolutePageXaml_SizeChanged">
-    
+             SizeChanged="AbsolutePageXaml_SizeChanged">    
     <ContentPage.Content >
     <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
       <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="bg.png" Aspect="AspectFill"/>
@@ -19,12 +18,9 @@
                     <StackLayout Orientation="Horizontal" BackgroundColor="White" >
                       <Image  Source="{Binding img}"  HeightRequest="80" WidthRequest="80"/>
                       <StackLayout Orientation="Vertical">                        
-                       <Label Text="{Binding name}" FontSize="16" TextColor="Green" FontFamily="Times New Roman"/>
-                       
-                         
+                       <Label Text="{Binding name}" FontSize="16" TextColor="Green" FontFamily="Times New Roman"/>                                               
                       </StackLayout>
                     </StackLayout>
-
                   </StackLayout>
                 </ViewCell>
               </DataTemplate>

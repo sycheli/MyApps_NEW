@@ -28,12 +28,16 @@ namespace MyAppAPI.Controllers
         public async Task<IHttpActionResult> GetPlate(int id)
         {
             Plate plate = await db.Plates.FindAsync(id);
+            
             if (plate == null)
             {
                 return NotFound();
             }
+            plate.Restaurant.Plates = null;
+            plate.Speciality.Plates = null;
 
             return Ok(plate);
+            
         }
 
         // PUT: api/Plates/5

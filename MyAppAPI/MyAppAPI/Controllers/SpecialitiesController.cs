@@ -32,7 +32,8 @@ namespace MyAppAPI.Controllers
             {
                 return NotFound();
             }
-
+           
+            
             return Ok(speciality);
         }
 

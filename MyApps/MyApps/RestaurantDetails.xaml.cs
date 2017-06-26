@@ -19,8 +19,24 @@ namespace MyApps
             Title = restaurant.name;
             this.restaurant = restaurant;
             InitializeComponent();
-           NavigationPage.SetHasNavigationBar(this, false);
+           //NavigationPage.SetHasNavigationBar(this, false);
             tapImage.Tapped += async (object sender, EventArgs e) =>
+            {
+                await Navigation.PushAsync(new MapPages(restaurant));
+            };
+            tapstreet.Tapped += async (object sender, EventArgs e) =>
+            {
+                await Navigation.PushAsync(new MapPages(restaurant));
+            };
+            tapcity.Tapped += async (object sender, EventArgs e) =>
+            {
+                await Navigation.PushAsync(new MapPages(restaurant));
+            };
+            tapcountry.Tapped += async (object sender, EventArgs e) =>
+            {
+                await Navigation.PushAsync(new MapPages(restaurant));
+            };
+            tapcode.Tapped += async (object sender, EventArgs e) =>
             {
                 await Navigation.PushAsync(new MapPages(restaurant));
             };

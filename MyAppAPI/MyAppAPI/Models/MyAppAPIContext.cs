@@ -18,8 +18,8 @@ namespace MyAppAPI.Models
         public MyAppAPIContext() : base("name=MyAppAPIContext")
         {
             //this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
-           // this.Configuration.LazyLoadingEnabled = false;
-            //this.Configuration.ProxyCreationEnabled = false;
+            //this.Configuration.LazyLoadingEnabled = false;
+           // this.Configuration.ProxyCreationEnabled = true;
         }
 
         public DbSet<User> Users { get; set; }

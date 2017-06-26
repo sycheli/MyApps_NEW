@@ -31,7 +31,7 @@ namespace MyApps.Views
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var pos = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
-            MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(MyPosition, Distance.FromKilometers(1)));
+            //MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(MyPosition, Distance.FromKilometers(1)));
             foreach (Restaurant r in restaurants)
             {
                 var pin = new Pin
@@ -58,7 +58,7 @@ namespace MyApps.Views
         public async Task GetRestaurant()
         {
             var client = new HttpClient();
-            var json = await client.GetStringAsync("http://192.168.43.65:61500/api/restaurants");
+            var json = await client.GetStringAsync("http://localhost:61500/api/restaurants");
             restaurants = getListFromJson(json);
         }
 

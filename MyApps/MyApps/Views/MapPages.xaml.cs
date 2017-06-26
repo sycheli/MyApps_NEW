@@ -59,7 +59,7 @@ namespace MyApps.Views
         public async Task GetRestaurant()
         {
             var client = new HttpClient();
-            var json = await client.GetStringAsync("http://192.168.43.65:61500/api/restaurants");
+            var json = await client.GetStringAsync("http://localhost:61500/api/restaurants");
             restaurants = getListFromJson(json);
         }
 
