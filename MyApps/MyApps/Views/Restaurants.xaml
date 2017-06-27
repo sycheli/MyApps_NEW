@@ -17,8 +17,10 @@
                   <StackLayout Spacing="0" Padding="7,7,7,0">
                     <StackLayout Orientation="Horizontal" BackgroundColor="White" >
                       <Image  Source="{Binding img}"  HeightRequest="80" WidthRequest="80"/>
-                      <StackLayout Orientation="Vertical">                        
-                       <Label Text="{Binding name}" FontSize="16" TextColor="Green" FontFamily="Times New Roman"/>                                               
+                      <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">                        
+                       <Label Text="{Binding name}" FontSize="16" TextColor="Green" FontFamily="Times New Roman"/> 
+                        <Label Text="{Binding Timing.begin }" FontSize="12" TextColor="Black"  FontFamily="Times New Roman"/>
+                        <Label Text="{Binding Timing.end}" FontSize="12" TextColor="Black"  FontFamily="Times New Roman"/>
                       </StackLayout>
                     </StackLayout>
                   </StackLayout>

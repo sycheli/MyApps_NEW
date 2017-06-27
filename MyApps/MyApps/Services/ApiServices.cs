@@ -13,20 +13,20 @@ namespace MyApps.Services
 {
     public class ApiServices
     {
-        public async Task  RegisterUserAsync(string email, string password, string confirmPassword)
+        public async Task RegisterUserAsync(string userName, string email, string password)
         {
             var client = new HttpClient();
             var model = new RegisterBindingModel
             {
-                Email = email,
-                Password = password,
-                ConfirmPassword = confirmPassword
+                userName = userName,
+                email = email,
+                password = password
             };
             var json = JsonConvert.SerializeObject(model);
             HttpContent content = new StringContent(json);
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var response = await client.PostAsync("http://192.168.1.118:61500/api/Account/Register", content);
-            
+           // content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var response = await client.PostAsync("http://localhost:61500/api/users", content);
+
         }
 
         public async Task LoginAsync(string userName, string password)

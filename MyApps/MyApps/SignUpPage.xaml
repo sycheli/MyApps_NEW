@@ -30,7 +30,7 @@
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Source="username.png" HeightRequest="30" VerticalOptions="Center" Grid.Row="0" Grid.Column="0"/>
-            <Entry x:Name="usernameEntry"  Placeholder="Username" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1"/>
+            <Entry x:Name="usernameEntry" Text="{Binding userName}" Placeholder="Username" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1"/>
           </Grid>
           <!--<BoxView HeightRequest="1" Grid.Row="4" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>-->
           
@@ -44,7 +44,7 @@
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Source="iconEmail.png" HeightRequest="30" VerticalOptions="Center" Grid.Row="0" Grid.Column="0"/>
-            <Entry x:Name="emailEntry"  Placeholder="Email" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
+            <Entry x:Name="emailEntry" Text="{Binding email}" Placeholder="Email" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
           </Grid>
           <!--<BoxView HeightRequest="1" Grid.Row="5" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>-->
           
@@ -58,7 +58,7 @@
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Source="iconPassword.png" HeightRequest="30" VerticalOptions="Center" />
-            <Entry x:Name="passwordEntry" IsPassword="True" Placeholder="Password" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
+            <Entry x:Name="passwordEntry" Text="{Binding password}" IsPassword="True" Placeholder="Password" BackgroundColor="Transparent" HorizontalOptions="Fill" TextColor="White" Grid.Row="0" Grid.Column="1" />
           </Grid>
           <!--<BoxView HeightRequest="1" Grid.Row="5" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>-->
           

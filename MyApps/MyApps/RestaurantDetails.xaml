@@ -11,6 +11,12 @@
             <StackLayout HorizontalOptions="FillAndExpand">
                 <Label x:Name="name" FontFamily="Times New Roman" FontSize="20" TextColor="Green" LineBreakMode="WordWrap" XAlign="Center"/>
                 <BoxView HeightRequest="1" WidthRequest="150" HorizontalOptions="Center" BackgroundColor="Gray" />
+                <Label Text="Rate" FontFamily="Times New Roman" FontSize="14" TextColor="Teal" XAlign="Center" />
+                <Label  x:Name="rate" FontFamily="Times New Roman" FontSize="12" LineBreakMode="WordWrap" XAlign="Center" />
+               <BoxView HeightRequest="1" WidthRequest="150" HorizontalOptions="Center" BackgroundColor="Gray" />
+              <Label Text="WinPoint" FontFamily="Times New Roman" FontSize="14" TextColor="Teal" XAlign="Center" />
+              <Label  x:Name="point" FontFamily="Times New Roman" FontSize="12" LineBreakMode="WordWrap" XAlign="Center" />
+              <BoxView HeightRequest="1" WidthRequest="150" HorizontalOptions="Center" BackgroundColor="Gray" />
                 <Label Text="Address" FontFamily="Times New Roman" FontSize="14" TextColor="Teal" XAlign="Center" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                   <Image Source="marker1.png">

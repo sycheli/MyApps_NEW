@@ -12,6 +12,8 @@ namespace MyApps
     public partial class RestaurantDetails : ContentPage
     {
         string stringVal;
+        string stringVal1;
+        string stringVal2;
         Restaurant restaurant;
 
         public RestaurantDetails(Restaurant restaurant)
@@ -56,7 +58,10 @@ namespace MyApps
             country.Text = restaurant.address.country;
             stringVal = System.Convert.ToString(restaurant.address.zipCode);
             zipCode.Text = stringVal;
-
+            stringVal1 = System.Convert.ToString(restaurant.rate);
+            rate.Text = stringVal1;
+            stringVal2 = System.Convert.ToString(restaurant.WinPointMin);
+            point.Text = stringVal2;
 
 
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MyApps.ViewsModel;
+using System.Collections.Generic;
 
 namespace MyApps
 {
@@ -9,6 +10,11 @@ namespace MyApps
         public Address address { get; set; }
         public string description { get; set; }
         public string cover { get; set; }
+        public double rate { get; set; }
+        public int WinPointMin { get; set; }
+        public Plate Plate { get; set; }
+        public int? Timing_Id { get; set; }
+        public Timing Timing { get; set; }
     }
     public class Address
     {

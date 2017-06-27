@@ -13,65 +13,66 @@ namespace MyApps
     public partial class DetailPage : ContentPage
     {
         
-        Plate Ofrre;
+        Offer Ofrre;
         string stringVal;
         string stringVal1;
         string stringVal2;
 
 
 
-        public DetailPage(Plate Ofrre)
+        public DetailPage(Offer Ofrre)
         {
-            Title = Ofrre.name;
+            Title = Ofrre.Plate.name;
             this.Ofrre = Ofrre;
           
             InitializeComponent();
 
 
         }
-        public static List<Plate> Offre;
+        public static List<Offer> Offre;
         public static List<Restaurant> restaurant;
         protected override  void OnAppearing()
         {
            
             base.OnAppearing();
-            var Offre = new List<Plate>();
+            var Offre = new List<Offer>();
             
             Offre.Add(Ofrre);
             
-            name.Text = Ofrre.name;
-            description.Text = Ofrre.description;
-            image.Source = Ofrre.img;
-            stringVal = System.Convert.ToString(Ofrre.price);
+            name.Text = Ofrre.Plate.name;
+            description.Text = Ofrre.Plate.description;
+            image.Source = Ofrre.Plate.img;
+            stringVal = System.Convert.ToString(Ofrre.Plate.price);
             price.Text = stringVal;
-            stringVal1 = System.Convert.ToString(Ofrre.rate);
+            stringVal1 = System.Convert.ToString(Ofrre.Plate.rate);
             rate.Text = stringVal1;
-            street.Text = Ofrre.restaurant.address.street;
-            city.Text = Ofrre.restaurant.address.city;
-            country.Text = Ofrre.restaurant.address.country;
-            stringVal2 = System.Convert.ToString(Ofrre.restaurant.address.zipCode);
+            street.Text = Ofrre.Plate.restaurant.address.street;
+            city.Text = Ofrre.Plate.restaurant.address.city;
+            country.Text = Ofrre.Plate.restaurant.address.country;
+            stringVal2 = System.Convert.ToString(Ofrre.Plate.restaurant.address.zipCode);
             zipCode.Text = stringVal2;
+            Restaurant.Text = Ofrre.Plate.restaurant.name;
         }
 
-        public async Task RegisterUserAsync()
-        {
-            var client = new HttpClient();
-            var model = new Reservation
-            {
+        //public async Task RegisterUserAsync()
+        //{
+        //    var client = new HttpClient();
+        //    var model = new Reservation
+        //    {
 
-                reservationPrice = Ofrre.price,
-                Plates = Offre
-            };
-            var json = JsonConvert.SerializeObject(model);
-            HttpContent content = new StringContent(json);
-            
-            var response = await client.PostAsync("http://10.0.3.2:61500/api/reservations", content);
+        //        reservationPrice = Ofrre.Plate.price,
+        //        Plates = Offre
+        //    };
+        //    var json = JsonConvert.SerializeObject(model);
+        //    HttpContent content = new StringContent(json);
+
+        //    var response = await client.PostAsync("http://10.0.3.2:61500/api/reservations", content);
 
 
-        }
+        //}
         public async void command(object sender, EventArgs e)
         {
-           await RegisterUserAsync();
+            //await RegisterUserAsync();
         }
 
     }

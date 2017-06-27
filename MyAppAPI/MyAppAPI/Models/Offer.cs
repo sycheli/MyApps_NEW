@@ -15,8 +15,9 @@ namespace MyAppAPI.Models
         public double discount { get; set; }
 
         [ForeignKey("Plate")]
+        [Column("PlateId")]
         public int? PlateId { get; set; }
-        public Plate Plate { get; set; }
+        public virtual Plate Plate { get; set; }
 
         //Timing
         public virtual Timing timing { get; set; }

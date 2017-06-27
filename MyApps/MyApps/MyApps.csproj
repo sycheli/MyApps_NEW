@@ -70,8 +70,6 @@
     <Compile Include="ViewsModel\LogOutCS.cs" />
     <Compile Include="ViewsModel\Plate.cs" />
     <Compile Include="ViewsModel\RegisterViewModel.cs" />
-    <Compile Include="ViewsModel\Reservation.cs" />
-    <Compile Include="ViewsModel\Speciality.cs" />
     <Compile Include="ViewsModel\Toast.cs" />
     <Compile Include="ViewPage.xaml.cs">
       <DependentUpon>ViewPage.xaml</DependentUpon>

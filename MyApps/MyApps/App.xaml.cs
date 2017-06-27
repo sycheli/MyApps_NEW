@@ -12,20 +12,20 @@ namespace MyApps
         public static bool IsUserLoggedIn { get; set; }
         public App()
         {
-            // MainPage = new NavigationPage(new ViewPage());
-            if (!IsUserLoggedIn)
-            {
-                MainPage = new NavigationPage(new ViewPage());
-            }
-            else
-            {
+             MainPage = new NavigationPage(new SideDrawer());
+            //if (!IsUserLoggedIn)
+            //{
+            //    MainPage = new NavigationPage(new ViewPage());
+            //}
+            //else
+            //{
 
-                MainPage = new NavigationPage(new SideDrawer())
-                {
-                    BarBackgroundColor = Color.FromHex("#00B0CD"),
-                    BarTextColor = Color.White,
-                };
-            }
+            //    MainPage = new NavigationPage(new SideDrawer())
+            //    {
+            //        BarBackgroundColor = Color.FromHex("#00B0CD"),
+            //        BarTextColor = Color.White,
+            //    };
+            //}
         }
 
         protected override void OnStart()
